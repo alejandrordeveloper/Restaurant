@@ -1,0 +1,101 @@
+/* Footer centrado y fijo abajo */
+.main-footer {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: var(--primary);
+  color: var(--light);
+  padding: 0.7rem 0;
+  font-size: 1rem;
+  box-shadow: 0 -2px 8px rgba(44,62,80,0.07);
+  z-index: 10;
+}
+.main-footer a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.main-footer a:hover {
+  color: var(--light);
+}
+.main-footer svg {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+/* Variables de color y tipografía */
+:root {
+  --primary: #2c3e50;
+  --accent:  #e67e22;
+  --light:   #ecf0f1;
+  --dark:    #34495e;
+  --font:    'Segoe UI', Tahoma, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--light);
+  color: var(--dark);
+  padding: 2rem;
+  line-height: 1.4;
+}
+
+h1 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: darken(var(--accent), 10%);
+}
+
+#output {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid var(--primary);
+  border-radius: 4px;
+  height: 220px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+/* Animación de entrada de cada línea */
+@keyframes dropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#output div {
+  animation: dropIn 0.3s ease;
+  margin-bottom: 0.25rem;
+}
