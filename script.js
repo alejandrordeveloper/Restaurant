@@ -29,7 +29,7 @@ function ordenandoComida(comida) {
       } else {
         reject("No tenemos esa comida");
       }
-    }, 1500);
+    }, 2500);
   });
 }
 
@@ -42,7 +42,7 @@ function ordenandoPostre(postre) {
       } else {
         reject("No tenemos ese postre");
       }
-    }, 2000);
+    }, 4000);
   });
 }
 
@@ -50,11 +50,15 @@ async function ordenarTodo() {
   try {
     const bebida = await ordenandoBebida("Coca-cola");
     log(bebida);
+    log("🥤 Bebida entregada.");
     const comida = await ordenandoComida("Pizza");
     log(comida);
+    log("🍕 Pizza entregada.");
     const postre = await ordenandoPostre("Helado");
     log(postre);
+    log("🍨 Postre entregado.");
     log("¡Todo ha sido ordenado!");
+    log("✅ El platillo ha sido creado exitosamente.");
   } catch (error) {
     log(error);
   }
@@ -62,5 +66,5 @@ async function ordenarTodo() {
 
 document.addEventListener("DOMContentLoaded", () => {
 //   ordenarTodo();
-  document.getElementById("start").addEventListener("click", ordenarTodo);
+document.getElementById("start").addEventListener("click", ordenarTodo);
 });
